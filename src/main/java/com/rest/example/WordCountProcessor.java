@@ -3,6 +3,7 @@ package com.rest.example;
 import java.util.StringTokenizer;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,7 +21,11 @@ import java.util.Map.Entry;
 public class WordCountProcessor {
 
 
-	public static final String fileUrl = "D:\\Aabha_Data\\TexonomixFolder\\WorkSpace\\CounterApi\\Input.txt";
+	//public static final String fileUrl = "D:\\Aabha_Data\\TexonomixFolder\\WorkSpace\\CounterApi\\Input.txt";
+	
+	public static final String fileUrl = "src\\main\\resources\\Input.txt";
+	
+	
 	/**
 	 * Get Counter information for word 
 	 * @param wordMap

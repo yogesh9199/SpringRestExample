@@ -7,7 +7,6 @@ import java.util.Map;
 
 import org.springframework.web.client.RestTemplate;
 
-import com.journaldev.spring.model.Employee;
 import com.rest.example.ResponseCounter;
 import com.rest.example.RestURIConstants;
 /**
@@ -18,7 +17,7 @@ import com.rest.example.RestURIConstants;
  */
 public class TestSpringRestExample {
 
-	public static final String SERVER_URI = "http://localhost:9090/SpringRestExample";
+	public static final String SERVER_URI = "http://localhost:8443/SpringRestExample";
 	
 	public static void main(String args[]){
 		
@@ -36,15 +35,16 @@ public class TestSpringRestExample {
 		 = new ResponseCounter();
 		 int zero = 0;
 		Map<String, Integer> wordMap = new LinkedHashMap<String, Integer>();
-		wordMap.put("eget", zero);
-		wordMap.put("vel", zero);
-
-		wordMap.put("in", zero);
-		wordMap.put("ut", zero);
-		wordMap.put("eget", zero);
+		wordMap.put("Pune", zero);
+//		wordMap.put("eget", zero);
+//		wordMap.put("vel", zero);
+//
+//		wordMap.put("in", zero);
+//		wordMap.put("ut", zero);
+//		wordMap.put("eget", zero);
 		requestCounter.setRequestWordMap(wordMap);
 		
-		ResponseCounter responseCounter = restTemplate.postForObject(SERVER_URI+RestURIConstants.COUNTER_WORD,responseCounter, ResponseCounter.class);
+		ResponseCounter responseCounter = restTemplate.postForObject(SERVER_URI+RestURIConstants.COUNTER_WORD,requestCounter, ResponseCounter.class);
 		
 		
 		for (Map.Entry<String, Integer> entry : responseCounter.getReponseList()) {
